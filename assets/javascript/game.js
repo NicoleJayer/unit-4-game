@@ -1,4 +1,9 @@
 $( '.pickbuttoncontainer' ).hide();
+$( '.versus' ).hide();
+$( '.pickedsoracontainer' ).hide();
+$( '.pickedrikucontainer' ).hide();
+$( '.pickeddonaldcontainer' ).hide();
+$( '.pickedgoofycontainer' ).hide();
 
 // create variables for each of the characters available -- maybe set them equal to health?
 
@@ -56,11 +61,38 @@ $( ".goofy" ).on( "click", function() {
           })
 
 
-//function for if person selects sora
+//functions for if person selects a character
 
 function soraselect(){
     $( '.sora' ).hide();
-    $( '.sora' ).hide();
+    $( '.pickbuttoncontainer' ).hide();
+    $( '.versus' ).show();
+    $( '.pickedsoracontainer' ).show();
+
+}
+
+function rikuselect(){
+    $( '.riku' ).hide();
+    $( '.pickbuttoncontainer' ).hide();
+    $( '.versus' ).show();
+    $( '.pickedrikucontainer' ).show();
+
+}
+
+function donaldselect(){
+    $( '.donald' ).hide();
+    $( '.pickbuttoncontainer' ).hide();
+    $( '.versus' ).show();
+    $( '.pickeddonaldcontainer' ).show();
+
+}
+
+function goofyselect(){
+    $( '.goofy' ).hide();
+    $( '.pickbuttoncontainer' ).hide();
+    $( '.versus' ).show();
+    $( '.pickedgoofycontainer' ).show();
+
 }
 
 // if (insert characters var) hp = 0 show "you have been defeated" or "you have defeated blah"

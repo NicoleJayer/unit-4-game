@@ -38,3 +38,15 @@ body {
 h1,h5 {
   color: white;
 }
+
+.versus {
+  position: absolute;
+  margin-left: 200px;
+  margin-top: 300px;
+}
+
+.pickedsoracontainer {
+  position: absolute;
+  margin-left: 150px;
+  margin-top: 20px;
+}
