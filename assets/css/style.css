@@ -23,6 +23,18 @@ body {
   text-align: center;
 }
 
+.pickbuttoncontainer {
+  position: absolute;
+  margin-top: 40px;
+  border: 10px;
+  border-color: white;
+  border-style: dashed;
+  padding: 5px;
+  margin-left: 20px;
+  text-align: center;
+
+}
+
 h1,h5 {
   color: white;
 }

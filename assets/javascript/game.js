@@ -1,3 +1,5 @@
+$( '.pickbuttoncontainer' ).hide();
+
 // create variables for each of the characters available -- maybe set them equal to health?
 
 //hero hit -- make that the number that gets multiplied by 6 each time
@@ -22,15 +24,43 @@
     //and hides reset button.
 
 $( ".start" ).on( "click", function() {
-        console.log( "click" );
             start();
         })
 
 
 function start(){
     $( '.startgamesection' ).hide();
+    $( '.pickbuttoncontainer' ).show();
 
 }
 
+
+//hero selection click to start functions
+$( ".sora" ).on( "click", function() {
+            soraselect();
+        })
+
+
+$( ".riku" ).on( "click", function() {
+            rikuselect();
+          })
+
+
+$( ".donald" ).on( "click", function() {
+            donaldselect();
+          })
+
+
+$( ".goofy" ).on( "click", function() {
+            goofyselect();
+          })
+
+
+//function for if person selects sora
+
+function soraselect(){
+    $( '.sora' ).hide();
+    $( '.sora' ).hide();
+}
 
 // if (insert characters var) hp = 0 show "you have been defeated" or "you have defeated blah"
