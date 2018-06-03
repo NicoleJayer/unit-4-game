@@ -2,3 +2,27 @@ body {
   background-image: url(../images/khbackground.jpg);
   background-size: cover;
 }
+
+.playersstartContainer {
+  position: absolute;
+  margin-top: 350px;
+  margin-left: 20px;
+  border: 10px;
+  border-style: dashed;
+  border-color: white;
+}
+
+.startbuttonContainer {
+  position: absolute;
+  margin-top: 40px;
+  border: 10px;
+  border-color: white;
+  border-style: dashed;
+  padding: 5px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+h1,h5 {
+  color: white;
+}
