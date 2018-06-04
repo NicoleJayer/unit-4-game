@@ -10,6 +10,7 @@ $( '.soraenemypickedcontainer' ).hide();
 $( '.rikuenemypickedcontainer' ).hide();
 $( '.donaldenemypickedcontainer' ).hide();
 $( '.goofyenemypickedcontainer' ).hide();
+$( '.attackbutton' ).hide();
 
 
 
@@ -23,28 +24,60 @@ var donaldhealth = 160;
 
 //hero hit -- make that the number that gets multiplied by 6 each time
 
+var heroattackvalue = 6;
+
 //enemies hit -- make that the number that subtracts from the hero health by same number each time
+
+var rikuenemyhit = 25;
+
+var soraenemyhit = 20;
+
+var donaldenemyhit = 15;
+
+var goofyenemyhit = 18;
+
+var goofyenemyhasbeenclicked = false;
+var soraenemyhasbeenclicked = false;
+var donaldenemyhasbeenclicked = false;
+var rikuenemyhasbeenclicked = false;
+
+var soraherohasbeenclicked = false;
+var rikuherohasbeenclicked = false;
+var donaldherohasbeenclicked = false;
+var goofyherohasbeenclicked = false;
+
+var attackbuttonclicked= false;
+
 
 
 // assign a value to each of the characters based on their life Health
 
 
+// do different combinations of player hero vs enemy picks with same math logic for each if then statements
+
+
+
+
 // create an if clicked for each of the characters
     // inside each of these if clicked, create a show to have a green chosen border and
-    // function to move that character to the top of the list while simultaneously moving
-      // the other characters to the bottom
-
-// creat a base game settings varaible for the health of each of the characters
 
 
 // create logic for start and reset buttons
     //reset so that characters all go to original position and reset button is hidden
-    //start button so that all characters become clickable (aka starts functions)
     //and hides reset button.
 
 $( ".start" ).on( "click", function() {
             start();
         })
+
+$( ".attackbutton" ).on( "click", function() {
+              attackbuttonfunction();
+          })
+
+function attackbuttonfunction(){
+  attackbuttonclicked = true;
+
+}
 
 
 function start(){
@@ -52,10 +85,10 @@ function start(){
     $( '.pickbuttoncontainer' ).show();
     $( '.playersstartContainer' ).hide();
     $( '.playerchooseContainer' ).show();
-    $('#hpholdersora').html(sorahealth);
-    $('#hpholderriku').html(rikuhealth);
-    $('#hpholderdonald').html(donahealth);
-    $('#hpholdergoofy').html(goofyhealth);
+    $('.hpholdersora').html(sorahealth);
+    $('.hpholderriku').html(rikuhealth);
+    $('.hpholderdonald').html(donaldhealth);
+    $('.hpholdergoofy').html(goofyhealth);
 
 
 }
@@ -92,6 +125,9 @@ function soraselect(){
     $( '.versus' ).show();
     $( '.pickedsoracontainer' ).show();
     $( '.soraenemy' ).hide();
+    soraherohasbeenclicked = true;
+    console.log(soraherohasbeenclicked);
+
 
 }
 
@@ -103,6 +139,8 @@ function rikuselect(){
   $( '.versus' ).show();
   $( '.pickedrikucontainer' ).show();
   $( '.rikuenemy' ).hide();
+  rikuherohasbeenclicked = true;
+  console.log(rikuherohasbeenclicked);
 
 }
 
@@ -114,6 +152,8 @@ function donaldselect(){
     $( '.versus' ).show();
     $( '.pickeddonaldcontainer' ).show();
     $( '.donaldenemy' ).hide();
+    donaldherohasbeenclicked = true;
+    console.log(donaldherohasbeenclicked);
 
 }
 
@@ -125,6 +165,8 @@ function goofyselect(){
     $( '.versus' ).show();
     $( '.pickedgoofycontainer' ).show();
     $( '.goofyenemy' ).hide();
+      goofyherohasbeenclicked = true;
+      console.log(goofyherohasbeenclicked);
 
 }
 
@@ -136,6 +178,9 @@ $( ".rikuenemy" ).on( "click", function() {
 function rikuenemy(){
     $( '.rikuenemy' ).hide();
     $( '.rikuenemypickedcontainer' ).show();
+     rikuenemyhasbeenclicked = true;
+       $( '.attackbutton' ).show();
+       console.log(rikuenemyhasbeenclicked);
 }
 
 
@@ -147,6 +192,9 @@ $( ".donaldenemy" ).on( "click", function() {
 function donaldenemy(){
     $( '.donaldenemy' ).hide();
     $( '.donaldenemypickedcontainer' ).show();
+      donaldenemyhasbeenclicked = true;
+        $( '.attackbutton' ).show();
+        console.log(donaldenemyhasbeenclicked);
 }
 
 
@@ -157,6 +205,9 @@ $( ".goofyenemy" ).on( "click", function() {
 function goofyenemy(){
     $( '.goofyenemy' ).hide();
     $( '.goofyenemypickedcontainer' ).show();
+      goofyenemyhasbeenclicked = true;
+        $( '.attackbutton' ).show();
+        console.log(goofyenemyhasbeenclicked);
 }
 
 
@@ -167,8 +218,19 @@ $( ".soraenemy" ).on( "click", function() {
 function soraenemy(){
     $( '.soraenemy' ).hide();
     $( '.soraenemypickedcontainer' ).show();
+     soraenemyhasbeenclicked = true;
+    $( '.attackbutton' ).show();
+    console.log(soraenemyhasbeenclicked);
 }
 //end of functions for enemy selected
 
 
-// if (insert characters var) hp = 0 show "you have been defeated" or "you have defeated blah"
+// if various hero enemy combos are true and attack button is clicked, then
+// subtract hero attack from enemy Health
+// then have hero take damage from Enemy
+// then multiply hero damage * 2
+// reset attack button so its waiting to be clicked again and will repeat the process
+//global number will change so continue to be divided by Two
+// if enemy health reaches 0 then hide them
+
+// start next combo, make them one huge else if statement. 

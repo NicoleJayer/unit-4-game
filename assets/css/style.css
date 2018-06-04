@@ -112,8 +112,14 @@ h1,h5,h3 {
 }
 
 p {
-  font-size: 10px;
+  font-size: 20px;
   position: absolute;
   background-color: white;
   margin-left: 30px;
+}
+
+.attackbutton {
+  position: absolute;
+  margin-left: 450px;
+  margin-top: 350px;
 }
