@@ -44,7 +44,7 @@ body {
 
 }
 
-h1,h5 {
+h1,h5,h3 {
   color: white;
 }
 
@@ -76,4 +76,28 @@ h1,h5 {
   position: absolute;
   margin-left: 50px;
   margin-top: 20px;
+}
+
+.soraenemypickedcontainer {
+    position: absolute;
+    margin-left: 250px;
+    margin-top: 20px;
+}
+
+.rikuenemypickedcontainer {
+    position: absolute;
+    margin-left: 250px;
+    margin-top: 20px;
+}
+
+.donaldenemypickedcontainer {
+    position: absolute;
+    margin-left: 250px;
+    margin-top: 20px;
+}
+
+.goofyenemypickedcontainer {
+    position: absolute;
+    margin-left: 250px;
+    margin-top: 20px;
 }

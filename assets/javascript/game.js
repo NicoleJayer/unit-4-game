@@ -5,6 +5,11 @@ $( '.pickedrikucontainer' ).hide();
 $( '.pickeddonaldcontainer' ).hide();
 $( '.pickedgoofycontainer' ).hide();
 $( '.playerenemyContainer' ).hide();
+$( '.soraenemypickedcontainer' ).hide();
+$( '.rikuenemypickedcontainer' ).hide();
+$( '.donaldenemypickedcontainer' ).hide();
+$( '.goofyenemypickedcontainer' ).hide();
+
 
 
 // create variables for each of the characters available -- maybe set them equal to health?
@@ -63,7 +68,7 @@ $( ".goofy" ).on( "click", function() {
           })
 
 
-//functions for if person selects a character
+//functions for if person selects a character and that person becomes the hero
 
 function soraselect(){
     $( '.playersstartContainer' ).hide();
@@ -104,5 +109,48 @@ function goofyselect(){
     $( '.goofyenemy' ).hide();
 
 }
+
+//functions for if enemy character is selected
+$( ".rikuenemy" ).on( "click", function() {
+            rikuenemy();
+          })
+
+function rikuenemy(){
+    $( '.rikuenemy' ).hide();
+    $( '.rikuenemypickedcontainer' ).show();
+}
+
+
+
+$( ".donaldenemy" ).on( "click", function() {
+            donaldenemy();
+          })
+
+function donaldenemy(){
+    $( '.donaldenemy' ).hide();
+    $( '.donaldenemypickedcontainer' ).show();
+}
+
+
+$( ".goofyenemy" ).on( "click", function() {
+            goofyenemy();
+          })
+
+function goofyenemy(){
+    $( '.goofyenemy' ).hide();
+    $( '.goofyenemypickedcontainer' ).show();
+}
+
+
+$( ".soraenemy" ).on( "click", function() {
+            soraenemy();
+          })
+
+function soraenemy(){
+    $( '.soraenemy' ).hide();
+    $( '.soraenemypickedcontainer' ).show();
+}
+//end of functions for enemy selected
+
 
 // if (insert characters var) hp = 0 show "you have been defeated" or "you have defeated blah"
