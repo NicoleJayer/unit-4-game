@@ -4,6 +4,8 @@ $( '.pickedsoracontainer' ).hide();
 $( '.pickedrikucontainer' ).hide();
 $( '.pickeddonaldcontainer' ).hide();
 $( '.pickedgoofycontainer' ).hide();
+$( '.playerenemyContainer' ).hide();
+
 
 // create variables for each of the characters available -- maybe set them equal to health?
 
@@ -64,34 +66,42 @@ $( ".goofy" ).on( "click", function() {
 //functions for if person selects a character
 
 function soraselect(){
-    $( '.sora' ).hide();
+    $( '.playersstartContainer' ).hide();
+    $( '.playerenemyContainer' ).show();
     $( '.pickbuttoncontainer' ).hide();
     $( '.versus' ).show();
     $( '.pickedsoracontainer' ).show();
+    $( '.soraenemy' ).hide();
 
 }
 
 function rikuselect(){
-    $( '.riku' ).hide();
-    $( '.pickbuttoncontainer' ).hide();
-    $( '.versus' ).show();
-    $( '.pickedrikucontainer' ).show();
+  $( '.playersstartContainer' ).hide();
+  $( '.playerenemyContainer' ).show();
+  $( '.pickbuttoncontainer' ).hide();
+  $( '.versus' ).show();
+  $( '.pickedrikucontainer' ).show();
+  $( '.rikuenemy' ).hide();
 
 }
 
 function donaldselect(){
-    $( '.donald' ).hide();
+  $( '.playersstartContainer' ).hide();
+  $( '.playerenemyContainer' ).show();
     $( '.pickbuttoncontainer' ).hide();
     $( '.versus' ).show();
     $( '.pickeddonaldcontainer' ).show();
+    $( '.donaldenemy' ).hide();
 
 }
 
 function goofyselect(){
-    $( '.goofy' ).hide();
+  $( '.playersstartContainer' ).hide();
+  $( '.playerenemyContainer' ).show();
     $( '.pickbuttoncontainer' ).hide();
     $( '.versus' ).show();
     $( '.pickedgoofycontainer' ).show();
+    $( '.goofyenemy' ).hide();
 
 }
 

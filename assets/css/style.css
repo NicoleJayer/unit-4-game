@@ -12,6 +12,15 @@ body {
   border-color: white;
 }
 
+.playerenemyContainer {
+  position: absolute;
+  margin-top: 350px;
+  margin-left: 20px;
+  border: 10px;
+  border-style: dashed;
+  border-color: white;
+}
+
 .startbuttonContainer {
   position: absolute;
   margin-top: 40px;
@@ -42,11 +51,29 @@ h1,h5 {
 .versus {
   position: absolute;
   margin-left: 200px;
-  margin-top: 300px;
+  margin-top: 100px;
 }
 
 .pickedsoracontainer {
   position: absolute;
-  margin-left: 150px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.pickedrikucontainer {
+  position: absolute;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.pickeddonaldcontainer {
+  position: absolute;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.pickedgoofycontainer {
+  position: absolute;
+  margin-left: 50px;
   margin-top: 20px;
 }
