@@ -12,6 +12,15 @@ body {
   border-color: white;
 }
 
+.playerchooseContainer {
+  position: absolute;
+  margin-top: 350px;
+  margin-left: 20px;
+  border: 10px;
+  border-style: dashed;
+  border-color: white;
+}
+
 .playerenemyContainer {
   position: absolute;
   margin-top: 350px;
@@ -100,4 +109,11 @@ h1,h5,h3 {
     position: absolute;
     margin-left: 250px;
     margin-top: 20px;
+}
+
+p {
+  font-size: 10px;
+  position: absolute;
+  background-color: white;
+  margin-left: 30px;
 }

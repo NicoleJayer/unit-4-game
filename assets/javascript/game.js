@@ -1,4 +1,5 @@
 $( '.pickbuttoncontainer' ).hide();
+$( '.playerchooseContainer' ).hide();
 $( '.versus' ).hide();
 $( '.pickedsoracontainer' ).hide();
 $( '.pickedrikucontainer' ).hide();
@@ -12,7 +13,13 @@ $( '.goofyenemypickedcontainer' ).hide();
 
 
 
+
 // create variables for each of the characters available -- maybe set them equal to health?
+
+var sorahealth = 200;
+var rikuhealth = 220;
+var goofyhealth = 180;
+var donaldhealth = 160;
 
 //hero hit -- make that the number that gets multiplied by 6 each time
 
@@ -43,6 +50,13 @@ $( ".start" ).on( "click", function() {
 function start(){
     $( '.startgamesection' ).hide();
     $( '.pickbuttoncontainer' ).show();
+    $( '.playersstartContainer' ).hide();
+    $( '.playerchooseContainer' ).show();
+    $('#hpholdersora').html(sorahealth);
+    $('#hpholderriku').html(rikuhealth);
+    $('#hpholderdonald').html(donahealth);
+    $('#hpholdergoofy').html(goofyhealth);
+
 
 }
 
@@ -72,6 +86,7 @@ $( ".goofy" ).on( "click", function() {
 
 function soraselect(){
     $( '.playersstartContainer' ).hide();
+    $( '.playerchooseContainer' ).hide();
     $( '.playerenemyContainer' ).show();
     $( '.pickbuttoncontainer' ).hide();
     $( '.versus' ).show();
@@ -82,6 +97,7 @@ function soraselect(){
 
 function rikuselect(){
   $( '.playersstartContainer' ).hide();
+  $( '.playerchooseContainer' ).hide();
   $( '.playerenemyContainer' ).show();
   $( '.pickbuttoncontainer' ).hide();
   $( '.versus' ).show();
@@ -92,6 +108,7 @@ function rikuselect(){
 
 function donaldselect(){
   $( '.playersstartContainer' ).hide();
+  $( '.playerchooseContainer' ).hide();
   $( '.playerenemyContainer' ).show();
     $( '.pickbuttoncontainer' ).hide();
     $( '.versus' ).show();
@@ -102,6 +119,7 @@ function donaldselect(){
 
 function goofyselect(){
   $( '.playersstartContainer' ).hide();
+    $( '.playerchooseContainer' ).hide();
   $( '.playerenemyContainer' ).show();
     $( '.pickbuttoncontainer' ).hide();
     $( '.versus' ).show();
