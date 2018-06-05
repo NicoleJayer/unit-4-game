@@ -83,19 +83,28 @@ $( ".start" ).on( "click", function() {
 
 $( ".attackbutton" ).on( "click", function() {
      currentenemyhp = currentenemyhp - heroattackvalue;
-     heroattackvalue = heroattackvalue * 2;
+     heroattackvalue = heroattackvalue * 2^5;
      currentherohp = currentherohp - currentenemyattack;
      $('.currentherohp').html(currentherohp);
      $('.currentenemyhp').html(currentenemyhp);
      console.log(currentenemyhp);
      console.log(currentherohp);
+     if (soraenemyhasbeenclicked && currentenemyhp<=0) {
+         $( '.soraenemypickedcontainer' ).hide();
+     }
 
-          })
+     if (rikuenemyhasbeenclicked && currentenemyhp<=0) {
+         $( '.rikuenemypickedcontainer' ).hide();
+     }
 
-function subtract(){
-  var newenemyhp = currentenemyhp - heroattackvalue;
-  console.log(newenemyhp);
-}
+     if (donaldenemyhasbeenclicked && currentenemyhp<=0) {
+         $( '.donaldenemypickedcontainer' ).hide();
+     }
+
+     if (goofyenemyhasbeenclicked && currentenemyhp<=0) {
+         $( '.goofyenemypickedcontainer' ).hide();
+     }
+})
 
 
 function start(){
@@ -266,7 +275,7 @@ function soraenemy(){
     $('.currentherohp').html(currentherohp);
     $('.currentenemyhp').html(currentenemyhp);
     console.log(soraenemyhasbeenclicked);
-    
+
 }
 //end of functions for enemy selected
 
