@@ -85,6 +85,8 @@ $( ".attackbutton" ).on( "click", function() {
      currentenemyhp = currentenemyhp - heroattackvalue;
      heroattackvalue = heroattackvalue * 2;
      currentherohp = currentherohp - currentenemyattack;
+     $('.currentherohp').html(currentherohp);
+     $('.currentenemyhp').html(currentenemyhp);
      console.log(currentenemyhp);
      console.log(currentherohp);
 
@@ -101,10 +103,8 @@ function start(){
     $( '.pickbuttoncontainer' ).show();
     $( '.playersstartContainer' ).hide();
     $( '.playerchooseContainer' ).show();
-    $('.hpholdersora').html(sorahealth);
-    $('.hpholderriku').html(rikuhealth);
-    $('.hpholderdonald').html(donaldhealth);
-    $('.hpholdergoofy').html(goofyhealth);
+    $('.currentherohp').html(currentherohp);
+    $('.currentenemyhp').html(currentenemyhp);
 
 
 }
@@ -143,6 +143,8 @@ function soraselect(){
     $( '.soraenemy' ).hide();
     soraherohasbeenclicked = true;
     currentherohp = 200;
+    $('.currentherohp').html(currentherohp);
+    $('.currentenemyhp').html(currentenemyhp);
     console.log(currentherohp);
 
 
@@ -159,6 +161,8 @@ function rikuselect(){
   $( '.rikuenemy' ).hide();
   rikuherohasbeenclicked = true;
   currentherohp = 220;
+  $('.currentherohp').html(currentherohp);
+  $('.currentenemyhp').html(currentenemyhp);
   console.log(rikuherohasbeenclicked);
 
 }
@@ -173,6 +177,8 @@ function donaldselect(){
     $( '.donaldenemy' ).hide();
     donaldherohasbeenclicked = true;
     currentherohp = 160;
+    $('.currentherohp').html(currentherohp);
+    $('.currentenemyhp').html(currentenemyhp);
     console.log(donaldherohasbeenclicked);
 
 }
@@ -187,6 +193,8 @@ function goofyselect(){
     $( '.goofyenemy' ).hide();
       goofyherohasbeenclicked = true;
       currentherohp = 180;
+      $('.currentherohp').html(currentherohp);
+      $('.currentenemyhp').html(currentenemyhp);
       console.log(goofyherohasbeenclicked);
 
 }
@@ -203,6 +211,8 @@ function rikuenemy(){
        $( '.attackbutton' ).show();
        currentenemyattack = 25;
        currentenemyhp = 220;
+       $('.currentherohp').html(currentherohp);
+       $('.currentenemyhp').html(currentenemyhp);
        console.log(currentenemyattack);
 }
 
@@ -219,6 +229,8 @@ function donaldenemy(){
         $( '.attackbutton' ).show();
         currentenemyattack = 15;
         currentenemyhp = 160;
+        $('.currentherohp').html(currentherohp);
+        $('.currentenemyhp').html(currentenemyhp);
         console.log(donaldenemyhasbeenclicked);
 }
 
@@ -234,6 +246,8 @@ function goofyenemy(){
         $( '.attackbutton' ).show();
         currentenemyattack = 18;
         currentenemyhp = 180;
+        $('.currentherohp').html(currentherohp);
+        $('.currentenemyhp').html(currentenemyhp);
         console.log(goofyenemyhasbeenclicked);
 }
 
@@ -249,7 +263,10 @@ function soraenemy(){
     $( '.attackbutton' ).show();
     currentenemyattack = 20;
     currentenemyhp = 200;
+    $('.currentherohp').html(currentherohp);
+    $('.currentenemyhp').html(currentenemyhp);
     console.log(soraenemyhasbeenclicked);
+    
 }
 //end of functions for enemy selected
 
