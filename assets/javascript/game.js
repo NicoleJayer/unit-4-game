@@ -14,6 +14,9 @@ $( '.attackbutton' ).hide();
 
 
 
+if (soraenemyhasbeenclicked && currentenemyhp<=0) {
+    $( '.soraenemypickedcontainer' ).hide();
+}
 
 // create variables for each of the characters available -- maybe set them equal to health?
 
@@ -79,7 +82,12 @@ $( ".start" ).on( "click", function() {
         })
 
 $( ".attackbutton" ).on( "click", function() {
-              subtract();
+     currentenemyhp = currentenemyhp - heroattackvalue;
+     heroattackvalue = heroattackvalue * 2;
+     currentherohp = currentherohp - currentenemyattack;
+     console.log(currentenemyhp);
+     console.log(currentherohp);
+
           })
 
 function subtract(){
