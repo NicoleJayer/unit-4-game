@@ -13,11 +13,6 @@ $( '.goofyenemypickedcontainer' ).hide();
 $( '.attackbutton' ).hide();
 
 
-
-if (soraenemyhasbeenclicked && currentenemyhp<=0) {
-    $( '.soraenemypickedcontainer' ).hide();
-}
-
 // create variables for each of the characters available -- maybe set them equal to health?
 
 var sorahealth = 200;
@@ -35,7 +30,6 @@ var currentherohp = 0;
 
 var currentenemyhp = 0;
 
-var newenemyhealth = 0;
 
 //enemies hit -- make that the number that subtracts from the hero health by same number each time
 
@@ -87,6 +81,7 @@ $( ".attackbutton" ).on( "click", function() {
      currentherohp = currentherohp - currentenemyattack;
      $('.currentherohp').html(currentherohp);
      $('.currentenemyhp').html(currentenemyhp);
+     attackbuttonclicked = true;
      console.log(currentenemyhp);
      console.log(currentherohp);
      if (soraenemyhasbeenclicked && currentenemyhp<=0) {
@@ -103,6 +98,22 @@ $( ".attackbutton" ).on( "click", function() {
 
      if (goofyenemyhasbeenclicked && currentenemyhp<=0) {
          $( '.goofyenemypickedcontainer' ).hide();
+     }
+
+     if (rikuherohasbeenclicked && currentherohp<=0) {
+         $( '.pickedrikucontainer' ).hide();
+     }
+
+     if (donaldherohasbeenclicked && currentherohp<=0) {
+         $( '.pickeddonaldcontainer' ).hide();
+     }
+
+     if (soraherohasbeenclicked && currentherohp<=0) {
+         $( '.pickedsoracontainer' ).hide();
+     }
+
+     if (goofyherohasbeenclicked && currentherohp<=0) {
+         $( '.pickedgoofycontainer' ).hide();
      }
 })
 
@@ -139,6 +150,12 @@ $( ".goofy" ).on( "click", function() {
             goofyselect();
           })
 
+
+//function for telling screen to print dialogue for attacks
+
+function dialogue(){
+  
+}
 
 //functions for if person selects a character and that person becomes the hero
 
