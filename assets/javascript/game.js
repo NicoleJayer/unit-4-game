@@ -160,75 +160,75 @@ $( ".goofy" ).on( "click", function() {
 function dialogue(){
   if (soraherohasbeenclicked && rikuenemyhasbeenclicked && attackbuttonclicked) {
 
-      alert("Sora attacked Riku for a value of" + heroattackvalue + "!");
-      alert("Riku attacked Sora for a value of" + currentenemyattack + "!");
+      alert("Sora attacked Riku for a value of " + heroattackvalue + "!");
+      alert("Riku attacked Sora for a value of " + currentenemyattack + "!");
    }
 
    if (soraherohasbeenclicked && donaldenemyhasbeenclicked && attackbuttonclicked) {
 
-       alert("Sora attacked Donald for a value of" + heroattackvalue + "!");
-       alert("Donald attacked Sora for a value of" + currentenemyattack + "!");
+       alert("Sora attacked Donald for a value of " + heroattackvalue + "!");
+       alert("Donald attacked Sora for a value of " + currentenemyattack + "!");
     }
 
     if (soraherohasbeenclicked && goofyenemyhasbeenclicked && attackbuttonclicked) {
 
-        alert("Sora attacked Goofy for a value of" + heroattackvalue + "!");
-        alert("Goofy attacked Sora for a value of" + currentenemyattack + "!");
+        alert("Sora attacked Goofy for a value of " + heroattackvalue + "!");
+        alert("Goofy attacked Sora for a value of " + currentenemyattack + "!");
      }
 
      // start of riku hero version
 
      if (rikuherohasbeenclicked && soraenemyhasbeenclicked && attackbuttonclicked) {
 
-         alert("Riku attacked Sora for a value of" + heroattackvalue + "!");
-         alert("Sora attacked Riku for a value of" + currentenemyattack + "!");
+         alert("Riku attacked Sora for a value of " + heroattackvalue + "!");
+         alert("Sora attacked Riku for a value of " + currentenemyattack + "!");
       }
 
       if (rikuherohasbeenclicked && donaldenemyhasbeenclicked && attackbuttonclicked) {
 
-          alert("Riku attacked Donald for a value of" + heroattackvalue + "!");
-          alert("Donald attacked Riku for a value of" + currentenemyattack + "!");
+          alert("Riku attacked Donald for a value of " + heroattackvalue + "!");
+          alert("Donald attacked Riku for a value of " + currentenemyattack + "!");
        }
 
     if (rikuherohasbeenclicked && goofyenemyhasbeenclicked && attackbuttonclicked) {
 
-           alert("Riku attacked Goofy for a value of" + heroattackvalue + "!");
-           alert("Goofy attacked Riku for a value of" + currentenemyattack + "!");
+           alert("Riku attacked Goofy for a value of " + heroattackvalue + "!");
+           alert("Goofy attacked Riku for a value of " + currentenemyattack + "!");
         }
 // start of donald hero version
         if (donaldherohasbeenclicked && soraenemyhasbeenclicked && attackbuttonclicked) {
 
-            alert("Donald attacked Sora for a value of" + heroattackvalue + "!");
-            alert("Sora attacked Donald for a value of" + currentenemyattack + "!");
+            alert("Donald attacked Sora for a value of " + heroattackvalue + "!");
+            alert("Sora attacked Donald for a value of " + currentenemyattack + "!");
          }
          if (donaldherohasbeenclicked && rikuenemyhasbeenclicked && attackbuttonclicked) {
 
-             alert("Donald attacked Riku for a value of" + heroattackvalue + "!");
-            alert("Riku attacked Donald for a value of" + currentenemyattack + "!");
+             alert("Donald attacked Riku for a value of " + heroattackvalue + "!");
+            alert("Riku attacked Donald for a value of " + currentenemyattack + "!");
           }
 
           if (donaldherohasbeenclicked && goofyenemyhasbeenclicked && attackbuttonclicked) {
 
-              alert("Donald attacked Goofy for a value of" + heroattackvalue + "!");
-              alert("Goofy attacked Donald for a value of" + currentenemyattack + "!");
+              alert("Donald attacked Goofy for a value of " + heroattackvalue + "!");
+              alert("Goofy attacked Donald for a value of " + currentenemyattack + "!");
            }
 // start of goofy hero version
            if (goofyherohasbeenclicked && soraenemyhasbeenclicked && attackbuttonclicked) {
 
-              alert("Goofy attacked Sora for a value of" + heroattackvalue + "!");
-              alert("Sora attacked Goofy for a value of" + currentenemyattack + "!");
+              alert("Goofy attacked Sora for a value of " + heroattackvalue + "!");
+              alert("Sora attacked Goofy for a value of " + currentenemyattack + "!");
             }
 
             if (goofyherohasbeenclicked && donaldenemyhasbeenclicked && attackbuttonclicked) {
 
-              alert("Goofy attacked Donald for a value of" + heroattackvalue + "!");
-              alert("Donald attacked Goofy for a value of" + currentenemyattack + "!");
+              alert("Goofy attacked Donald for a value of " + heroattackvalue + "!");
+              alert("Donald attacked Goofy for a value of " + currentenemyattack + "!");
              }
 
              if (goofyherohasbeenclicked && rikuenemyhasbeenclicked && attackbuttonclicked) {
 
-              alert("Goofy attacked Riku for a value of" + heroattackvalue + "!");
-              alert("Riku attacked Goofy for a value of" + currentenemyattack + "!");
+              alert("Goofy attacked Riku for a value of " + heroattackvalue + "!");
+              alert("Riku attacked Goofy for a value of " + currentenemyattack + "!");
               }
 
 }
