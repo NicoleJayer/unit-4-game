@@ -11,6 +11,7 @@ $( '.rikuenemypickedcontainer' ).hide();
 $( '.donaldenemypickedcontainer' ).hide();
 $( '.goofyenemypickedcontainer' ).hide();
 $( '.attackbutton' ).hide();
+$( '.dialoguebox' ).hide();
 
 
 // create variables for each of the characters available -- maybe set them equal to health?
@@ -155,9 +156,15 @@ $( ".goofy" ).on( "click", function() {
 
 //function for telling screen to print dialogue for attacks
 
-
-//start of sora hero version
 function dialogue(){
+//start of sora hero version
+
+  if (soraherohasbeenclicked && rikuenemyhasbeenclicked) {
+
+      alert("Sora attacked Riku for a value of " + heroattackvalue + "!");
+      alert("Riku attacked Sora for a value of " + currentenemyattack + "!");
+   }
+
   if (soraherohasbeenclicked && rikuenemyhasbeenclicked && attackbuttonclicked) {
 
       alert("Sora attacked Riku for a value of " + heroattackvalue + "!");
@@ -311,6 +318,7 @@ function rikuenemy(){
     $( '.rikuenemypickedcontainer' ).show();
      rikuenemyhasbeenclicked = true;
        $( '.attackbutton' ).show();
+       $( '.dialoguebox' ).show();
        currentenemyattack = 25;
        currentenemyhp = 220;
        $('.currentherohp').html(currentherohp);
@@ -329,6 +337,7 @@ function donaldenemy(){
     $( '.donaldenemypickedcontainer' ).show();
       donaldenemyhasbeenclicked = true;
         $( '.attackbutton' ).show();
+        $( '.dialoguebox' ).show();
         currentenemyattack = 15;
         currentenemyhp = 160;
         $('.currentherohp').html(currentherohp);
@@ -346,6 +355,7 @@ function goofyenemy(){
     $( '.goofyenemypickedcontainer' ).show();
       goofyenemyhasbeenclicked = true;
         $( '.attackbutton' ).show();
+        $( '.dialoguebox' ).show();
         currentenemyattack = 18;
         currentenemyhp = 180;
         $('.currentherohp').html(currentherohp);
@@ -363,6 +373,7 @@ function soraenemy(){
     $( '.soraenemypickedcontainer' ).show();
      soraenemyhasbeenclicked = true;
     $( '.attackbutton' ).show();
+    $( '.dialoguebox' ).show();
     currentenemyattack = 20;
     currentenemyhp = 200;
     $('.currentherohp').html(currentherohp);

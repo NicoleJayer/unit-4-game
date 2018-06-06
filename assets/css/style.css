@@ -53,6 +53,17 @@ body {
 
 }
 
+.dialoguebox {
+  position: absolute;
+  margin-top: 400px;
+  border: 5px;
+  border-color: white;
+  border-style: dashed;
+  padding: 50px 80px 125px 80px;
+  margin-left: 380px;
+  text-align: center;
+}
+
 h1,h5,h3 {
   color: white;
 }
