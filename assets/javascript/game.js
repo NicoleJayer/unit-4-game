@@ -159,16 +159,10 @@ $( ".goofy" ).on( "click", function() {
 function dialogue(){
 //start of sora hero version
 
-  if (soraherohasbeenclicked && rikuenemyhasbeenclicked) {
-
-      alert("Sora attacked Riku for a value of " + heroattackvalue + "!");
-      alert("Riku attacked Sora for a value of " + currentenemyattack + "!");
-   }
-
   if (soraherohasbeenclicked && rikuenemyhasbeenclicked && attackbuttonclicked) {
 
-      alert("Sora attacked Riku for a value of " + heroattackvalue + "!");
-      alert("Riku attacked Sora for a value of " + currentenemyattack + "!");
+      $('#attackdialogueone').html("Sora attacked Riku for a value of " + heroattackvalue + "!");
+      $('#attackdialoguetwo').html("Riku attacked Sora for a value of " + currentenemyattack + "!");
    }
 
    if (soraherohasbeenclicked && donaldenemyhasbeenclicked && attackbuttonclicked) {

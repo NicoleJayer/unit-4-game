@@ -59,10 +59,18 @@ body {
   border: 5px;
   border-color: white;
   border-style: dashed;
-  padding: 50px 80px 125px 80px;
-  margin-left: 380px;
+  padding: 20px;
+  width: 230px;
+  height: 200px;
+  margin-left: 370px;
   text-align: center;
 }
+
+#attackdialogueone {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
 
 h1,h5,h3 {
   color: white;
