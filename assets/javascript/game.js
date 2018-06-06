@@ -73,15 +73,17 @@ var attackbuttonclicked= false;
 
 $( ".start" ).on( "click", function() {
             start();
+
         })
 
 $( ".attackbutton" ).on( "click", function() {
+      attackbuttonclicked = true;
+      dialogue();
      currentenemyhp = currentenemyhp - heroattackvalue;
      heroattackvalue = heroattackvalue * 2^5;
      currentherohp = currentherohp - currentenemyattack;
      $('.currentherohp').html(currentherohp);
      $('.currentenemyhp').html(currentenemyhp);
-     attackbuttonclicked = true;
      console.log(currentenemyhp);
      console.log(currentherohp);
      if (soraenemyhasbeenclicked && currentenemyhp<=0) {
@@ -153,8 +155,82 @@ $( ".goofy" ).on( "click", function() {
 
 //function for telling screen to print dialogue for attacks
 
+
+//start of sora hero version
 function dialogue(){
-  
+  if (soraherohasbeenclicked && rikuenemyhasbeenclicked && attackbuttonclicked) {
+
+      alert("Sora attacked Riku for a value of" + heroattackvalue + "!");
+      alert("Riku attacked Sora for a value of" + currentenemyattack + "!");
+   }
+
+   if (soraherohasbeenclicked && donaldenemyhasbeenclicked && attackbuttonclicked) {
+
+       alert("Sora attacked Donald for a value of" + heroattackvalue + "!");
+       alert("Donald attacked Sora for a value of" + currentenemyattack + "!");
+    }
+
+    if (soraherohasbeenclicked && goofyenemyhasbeenclicked && attackbuttonclicked) {
+
+        alert("Sora attacked Goofy for a value of" + heroattackvalue + "!");
+        alert("Goofy attacked Sora for a value of" + currentenemyattack + "!");
+     }
+
+     // start of riku hero version
+
+     if (rikuherohasbeenclicked && soraenemyhasbeenclicked && attackbuttonclicked) {
+
+         alert("Riku attacked Sora for a value of" + heroattackvalue + "!");
+         alert("Sora attacked Riku for a value of" + currentenemyattack + "!");
+      }
+
+      if (rikuherohasbeenclicked && donaldenemyhasbeenclicked && attackbuttonclicked) {
+
+          alert("Riku attacked Donald for a value of" + heroattackvalue + "!");
+          alert("Donald attacked Riku for a value of" + currentenemyattack + "!");
+       }
+
+    if (rikuherohasbeenclicked && goofyenemyhasbeenclicked && attackbuttonclicked) {
+
+           alert("Riku attacked Goofy for a value of" + heroattackvalue + "!");
+           alert("Goofy attacked Riku for a value of" + currentenemyattack + "!");
+        }
+// start of donald hero version
+        if (donaldherohasbeenclicked && soraenemyhasbeenclicked && attackbuttonclicked) {
+
+            alert("Donald attacked Sora for a value of" + heroattackvalue + "!");
+            alert("Sora attacked Donald for a value of" + currentenemyattack + "!");
+         }
+         if (donaldherohasbeenclicked && rikuenemyhasbeenclicked && attackbuttonclicked) {
+
+             alert("Donald attacked Riku for a value of" + heroattackvalue + "!");
+            alert("Riku attacked Donald for a value of" + currentenemyattack + "!");
+          }
+
+          if (donaldherohasbeenclicked && goofyenemyhasbeenclicked && attackbuttonclicked) {
+
+              alert("Donald attacked Goofy for a value of" + heroattackvalue + "!");
+              alert("Goofy attacked Donald for a value of" + currentenemyattack + "!");
+           }
+// start of goofy hero version
+           if (goofyherohasbeenclicked && soraenemyhasbeenclicked && attackbuttonclicked) {
+
+              alert("Goofy attacked Sora for a value of" + heroattackvalue + "!");
+              alert("Sora attacked Goofy for a value of" + currentenemyattack + "!");
+            }
+
+            if (goofyherohasbeenclicked && donaldenemyhasbeenclicked && attackbuttonclicked) {
+
+              alert("Goofy attacked Donald for a value of" + heroattackvalue + "!");
+              alert("Donald attacked Goofy for a value of" + currentenemyattack + "!");
+             }
+
+             if (goofyherohasbeenclicked && rikuenemyhasbeenclicked && attackbuttonclicked) {
+
+              alert("Goofy attacked Riku for a value of" + heroattackvalue + "!");
+              alert("Riku attacked Goofy for a value of" + currentenemyattack + "!");
+              }
+
 }
 
 //functions for if person selects a character and that person becomes the hero
