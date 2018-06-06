@@ -12,6 +12,7 @@ $( '.donaldenemypickedcontainer' ).hide();
 $( '.goofyenemypickedcontainer' ).hide();
 $( '.attackbutton' ).hide();
 $( '.dialoguebox' ).hide();
+$( '.resetbutton' ).hide();
 
 
 // create variables for each of the characters available -- maybe set them equal to health?
@@ -30,6 +31,10 @@ var currentenemyattack = 0;
 var currentherohp = 0;
 
 var currentenemyhp = 0;
+
+var allenemykilled = 0;
+
+var herokilled = 0;
 
 
 //enemies hit -- make that the number that subtracts from the hero health by same number each time
@@ -53,6 +58,7 @@ var donaldherohasbeenclicked = false;
 var goofyherohasbeenclicked = false;
 
 var attackbuttonclicked= false;
+
 
 
 
@@ -91,7 +97,9 @@ $( ".attackbutton" ).on( "click", function() {
          $( '.soraenemypickedcontainer' ).hide();
          $('#attackdialogueone').html("Sora has been defeated! Choose another character to battle.");
          $('#attackdialoguetwo').hide();
+         allenemykilled = allenemykilled + 1;
          rikuenemyhasbeenclicked = false;
+         console.log(allenemykilled);
 
      }
 
@@ -99,27 +107,34 @@ $( ".attackbutton" ).on( "click", function() {
          $( '.rikuenemypickedcontainer' ).hide();
          $('#attackdialogueone').html("Riku has been defeated! Choose another character to battle.");
          $('#attackdialoguetwo').hide();
+         allenemykilled = allenemykilled + 1;
          rikuenemyhasbeenclicked = false;
+         console.log(allenemykilled);
      }
 
      if (donaldenemyhasbeenclicked && currentenemyhp<=0) {
          $( '.donaldenemypickedcontainer' ).hide();
          $('#attackdialogueone').html("Donald has been defeated! Choose another character to battle.");
          $('#attackdialoguetwo').hide();
+         allenemykilled = allenemykilled + 1;
         donaldenemyhasbeenclicked = false;
+        console.log(allenemykilled);
      }
 
      if (goofyenemyhasbeenclicked && currentenemyhp<=0) {
          $( '.goofyenemypickedcontainer' ).hide();
          $('#attackdialogueone').html("Goofy has been defeated! Choose another character to battle.");
          $('#attackdialoguetwo').hide();
+         allenemykilled = allenemykilled + 1;
         goofyenemyhasbeenclicked = false;
+        console.log(allenemykilled);
      }
 
      if (rikuherohasbeenclicked && currentherohp<=0) {
          $( '.pickedrikucontainer' ).hide();
          $('#attackdialogueone').html("You have been defeated!");
          $('#attackdialoguetwo').hide();
+         herokilled = herokilled + 1;
          //to insert show reset button functions here
      }
 
@@ -127,6 +142,7 @@ $( ".attackbutton" ).on( "click", function() {
          $( '.pickeddonaldcontainer' ).hide();
          $('#attackdialogueone').html("You have been defeated!");
          $('#attackdialoguetwo').hide();
+          herokilled = herokilled + 1;
          //to insert show reset button functions here
      }
 
@@ -134,6 +150,7 @@ $( ".attackbutton" ).on( "click", function() {
          $( '.pickedsoracontainer' ).hide();
          $('#attackdialogueone').html("You have been defeated!");
          $('#attackdialoguetwo').hide();
+          herokilled = herokilled + 1;
          //to insert show reset button functions here
      }
 
@@ -141,8 +158,12 @@ $( ".attackbutton" ).on( "click", function() {
          $( '.pickedgoofycontainer' ).hide();
          $('#attackdialogueone').html("You have been defeated!");
          $('#attackdialoguetwo').hide();
+          herokilled = herokilled + 1;
          //to insert show reset button functions here
      }
+
+     resetgame();
+
 })
 
 
@@ -404,6 +425,52 @@ function soraenemy(){
 
 }
 //end of functions for enemy selected
+
+
+//enemy and hero killed function
+function resetgame() {
+if (allenemykilled === 3) {
+  $( '.attackbutton' ).hide();
+  $( '.resetbutton' ).show();
+  $('#attackdialogueone').html("Congrats you have won! Press reset button to play again.");
+  $('#attackdialoguetwo').hide();
+
+    }
+
+if (herokilled === 1) {
+  $( '.attackbutton' ).hide();
+  $( '.resetbutton' ).show();
+  $('#attackdialogueone').html("You have lost. Press reset button to play again.");
+  $('#attackdialoguetwo').hide();
+
+    }
+
+}
+
+
+// to reset game click this button:
+
+$( ".resetbutton" ).on( "click", function() {
+
+$( '.pickbuttoncontainer' ).hide();
+$( '.playerchooseContainer' ).hide();
+$( '.versus' ).hide();
+$( '.pickedsoracontainer' ).hide();
+$( '.pickedrikucontainer' ).hide();
+$( '.pickeddonaldcontainer' ).hide();
+$( '.pickedgoofycontainer' ).hide();
+$( '.playerenemyContainer' ).hide();
+$( '.soraenemypickedcontainer' ).hide();
+$( '.rikuenemypickedcontainer' ).hide();
+$( '.donaldenemypickedcontainer' ).hide();
+$( '.goofyenemypickedcontainer' ).hide();
+$( '.attackbutton' ).hide();
+$( '.dialoguebox' ).hide();
+$( '.resetbutton' ).hide();
+$( '.startgamesection' ).show();
+$( '.playersstartContainer' ).show();
+
+  })
 
 
 // if various hero enemy combos are true and attack button is clicked, then
