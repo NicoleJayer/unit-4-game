@@ -81,7 +81,7 @@ $( ".attackbutton" ).on( "click", function() {
       attackbuttonclicked = true;
       dialogue();
      currentenemyhp = currentenemyhp - heroattackvalue;
-     heroattackvalue = heroattackvalue * 2^5;
+     heroattackvalue = heroattackvalue * 1.5^5;
      currentherohp = currentherohp - currentenemyattack;
      $('.currentherohp').html(currentherohp);
      $('.currentenemyhp').html(currentenemyhp);
@@ -89,34 +89,59 @@ $( ".attackbutton" ).on( "click", function() {
      console.log(currentherohp);
      if (soraenemyhasbeenclicked && currentenemyhp<=0) {
          $( '.soraenemypickedcontainer' ).hide();
+         $('#attackdialogueone').html("Sora has been defeated! Choose another character to battle.");
+         $('#attackdialoguetwo').hide();
+         rikuenemyhasbeenclicked = false;
+
      }
 
      if (rikuenemyhasbeenclicked && currentenemyhp<=0) {
          $( '.rikuenemypickedcontainer' ).hide();
+         $('#attackdialogueone').html("Riku has been defeated! Choose another character to battle.");
+         $('#attackdialoguetwo').hide();
+         rikuenemyhasbeenclicked = false;
      }
 
      if (donaldenemyhasbeenclicked && currentenemyhp<=0) {
          $( '.donaldenemypickedcontainer' ).hide();
+         $('#attackdialogueone').html("Donald has been defeated! Choose another character to battle.");
+         $('#attackdialoguetwo').hide();
+        donaldenemyhasbeenclicked = false;
      }
 
      if (goofyenemyhasbeenclicked && currentenemyhp<=0) {
          $( '.goofyenemypickedcontainer' ).hide();
+         $('#attackdialogueone').html("Goofy has been defeated! Choose another character to battle.");
+         $('#attackdialoguetwo').hide();
+        goofyenemyhasbeenclicked = false;
      }
 
      if (rikuherohasbeenclicked && currentherohp<=0) {
          $( '.pickedrikucontainer' ).hide();
+         $('#attackdialogueone').html("You have been defeated!");
+         $('#attackdialoguetwo').hide();
+         //to insert show reset button functions here
      }
 
      if (donaldherohasbeenclicked && currentherohp<=0) {
          $( '.pickeddonaldcontainer' ).hide();
+         $('#attackdialogueone').html("You have been defeated!");
+         $('#attackdialoguetwo').hide();
+         //to insert show reset button functions here
      }
 
      if (soraherohasbeenclicked && currentherohp<=0) {
          $( '.pickedsoracontainer' ).hide();
+         $('#attackdialogueone').html("You have been defeated!");
+         $('#attackdialoguetwo').hide();
+         //to insert show reset button functions here
      }
 
      if (goofyherohasbeenclicked && currentherohp<=0) {
          $( '.pickedgoofycontainer' ).hide();
+         $('#attackdialogueone').html("You have been defeated!");
+         $('#attackdialoguetwo').hide();
+         //to insert show reset button functions here
      }
 })
 
@@ -161,75 +186,78 @@ function dialogue(){
 
   if (soraherohasbeenclicked && rikuenemyhasbeenclicked && attackbuttonclicked) {
 
+      $('#attackdialoguetwo').show();
       $('#attackdialogueone').html("Sora attacked Riku for a value of " + heroattackvalue + "!");
       $('#attackdialoguetwo').html("Riku attacked Sora for a value of " + currentenemyattack + "!");
    }
 
    if (soraherohasbeenclicked && donaldenemyhasbeenclicked && attackbuttonclicked) {
 
-       alert("Sora attacked Donald for a value of " + heroattackvalue + "!");
-       alert("Donald attacked Sora for a value of " + currentenemyattack + "!");
+
+        $('#attackdialoguetwo').show();
+       $('#attackdialogueone').html("Sora attacked Donald for a value of " + heroattackvalue + "!");
+       $('#attackdialoguetwo').html("Donald attacked Sora for a value of " + currentenemyattack + "!");
     }
 
     if (soraherohasbeenclicked && goofyenemyhasbeenclicked && attackbuttonclicked) {
-
-        alert("Sora attacked Goofy for a value of " + heroattackvalue + "!");
-        alert("Goofy attacked Sora for a value of " + currentenemyattack + "!");
+        $('#attackdialoguetwo').show();
+        $('#attackdialogueone').html("Sora attacked Goofy for a value of " + heroattackvalue + "!");
+        $('#attackdialoguetwo').html("Goofy attacked Sora for a value of " + currentenemyattack + "!");
      }
 
      // start of riku hero version
 
      if (rikuherohasbeenclicked && soraenemyhasbeenclicked && attackbuttonclicked) {
-
-         alert("Riku attacked Sora for a value of " + heroattackvalue + "!");
-         alert("Sora attacked Riku for a value of " + currentenemyattack + "!");
+        $('#attackdialoguetwo').show();
+         $('#attackdialogueone').html("Riku attacked Sora for a value of " + heroattackvalue + "!");
+         $('#attackdialoguetwo').html("Sora attacked Riku for a value of " + currentenemyattack + "!");
       }
 
       if (rikuherohasbeenclicked && donaldenemyhasbeenclicked && attackbuttonclicked) {
-
-          alert("Riku attacked Donald for a value of " + heroattackvalue + "!");
-          alert("Donald attacked Riku for a value of " + currentenemyattack + "!");
+          $('#attackdialoguetwo').show();
+          $('#attackdialogueone').html("Riku attacked Donald for a value of " + heroattackvalue + "!");
+          $('#attackdialoguetwo').html("Donald attacked Riku for a value of " + currentenemyattack + "!");
        }
 
     if (rikuherohasbeenclicked && goofyenemyhasbeenclicked && attackbuttonclicked) {
-
-           alert("Riku attacked Goofy for a value of " + heroattackvalue + "!");
-           alert("Goofy attacked Riku for a value of " + currentenemyattack + "!");
+          $('#attackdialoguetwo').show();
+           $('#attackdialogueone').html("Riku attacked Goofy for a value of " + heroattackvalue + "!");
+           $('#attackdialoguetwo').html("Goofy attacked Riku for a value of " + currentenemyattack + "!");
         }
 // start of donald hero version
         if (donaldherohasbeenclicked && soraenemyhasbeenclicked && attackbuttonclicked) {
-
-            alert("Donald attacked Sora for a value of " + heroattackvalue + "!");
-            alert("Sora attacked Donald for a value of " + currentenemyattack + "!");
+            $('#attackdialoguetwo').show();
+            $('#attackdialogueone').html("Donald attacked Sora for a value of " + heroattackvalue + "!");
+            $('#attackdialoguetwo').html("Sora attacked Donald for a value of " + currentenemyattack + "!");
          }
          if (donaldherohasbeenclicked && rikuenemyhasbeenclicked && attackbuttonclicked) {
-
-             alert("Donald attacked Riku for a value of " + heroattackvalue + "!");
-            alert("Riku attacked Donald for a value of " + currentenemyattack + "!");
+            $('#attackdialoguetwo').show();
+            $('#attackdialogueone').html("Donald attacked Riku for a value of " + heroattackvalue + "!");
+            $('#attackdialoguetwo').html("Riku attacked Donald for a value of " + currentenemyattack + "!");
           }
 
           if (donaldherohasbeenclicked && goofyenemyhasbeenclicked && attackbuttonclicked) {
-
-              alert("Donald attacked Goofy for a value of " + heroattackvalue + "!");
-              alert("Goofy attacked Donald for a value of " + currentenemyattack + "!");
+              $('#attackdialoguetwo').show();
+              $('#attackdialogueone').html("Donald attacked Goofy for a value of " + heroattackvalue + "!");
+              $('#attackdialoguetwo').html("Goofy attacked Donald for a value of " + currentenemyattack + "!");
            }
 // start of goofy hero version
            if (goofyherohasbeenclicked && soraenemyhasbeenclicked && attackbuttonclicked) {
-
-              alert("Goofy attacked Sora for a value of " + heroattackvalue + "!");
-              alert("Sora attacked Goofy for a value of " + currentenemyattack + "!");
+              $('#attackdialoguetwo').show();
+              $('#attackdialogueone').html("Goofy attacked Sora for a value of " + heroattackvalue + "!");
+              $('#attackdialoguetwo').html("Sora attacked Goofy for a value of " + currentenemyattack + "!");
             }
 
             if (goofyherohasbeenclicked && donaldenemyhasbeenclicked && attackbuttonclicked) {
-
-              alert("Goofy attacked Donald for a value of " + heroattackvalue + "!");
-              alert("Donald attacked Goofy for a value of " + currentenemyattack + "!");
+              $('#attackdialoguetwo').show();
+              $('#attackdialogueone').html("Goofy attacked Donald for a value of " + heroattackvalue + "!");
+              $('#attackdialoguetwo').html("Donald attacked Goofy for a value of " + currentenemyattack + "!");
              }
 
              if (goofyherohasbeenclicked && rikuenemyhasbeenclicked && attackbuttonclicked) {
-
-              alert("Goofy attacked Riku for a value of " + heroattackvalue + "!");
-              alert("Riku attacked Goofy for a value of " + currentenemyattack + "!");
+              $('#attackdialoguetwo').show();
+              $('#attackdialogueone').html("Goofy attacked Riku for a value of " + heroattackvalue + "!");
+              $('#attackdialoguetwo').html("Riku attacked Goofy for a value of " + currentenemyattack + "!");
               }
 
 }
