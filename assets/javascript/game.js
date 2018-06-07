@@ -34,7 +34,16 @@ var currentenemyhp = 0;
 
 var allenemykilled = 0;
 
-var herokilled = 0;
+var soraenemydeath = false;
+var rikuenemydeath = false;
+var donaldenemydeath = false;
+var goofyenemydeath = false;
+
+var soraherodeath = false;
+var rikuherodeath = false;
+var donaldherodeath = false;
+var goofyherodeath = false;
+
 
 
 //enemies hit -- make that the number that subtracts from the hero health by same number each time
@@ -97,7 +106,7 @@ $( ".attackbutton" ).on( "click", function() {
          $( '.soraenemypickedcontainer' ).hide();
          $('#attackdialogueone').html("Sora has been defeated! Choose another character to battle.");
          $('#attackdialoguetwo').hide();
-         allenemykilled = allenemykilled + 1;
+         soraenemydeath = true;
          rikuenemyhasbeenclicked = false;
          console.log(allenemykilled);
 
@@ -107,7 +116,7 @@ $( ".attackbutton" ).on( "click", function() {
          $( '.rikuenemypickedcontainer' ).hide();
          $('#attackdialogueone').html("Riku has been defeated! Choose another character to battle.");
          $('#attackdialoguetwo').hide();
-         allenemykilled = allenemykilled + 1;
+         rikuenemydeath = true;
          rikuenemyhasbeenclicked = false;
          console.log(allenemykilled);
      }
@@ -116,7 +125,7 @@ $( ".attackbutton" ).on( "click", function() {
          $( '.donaldenemypickedcontainer' ).hide();
          $('#attackdialogueone').html("Donald has been defeated! Choose another character to battle.");
          $('#attackdialoguetwo').hide();
-         allenemykilled = allenemykilled + 1;
+         donaldenemydeath = true;
         donaldenemyhasbeenclicked = false;
         console.log(allenemykilled);
      }
@@ -125,7 +134,7 @@ $( ".attackbutton" ).on( "click", function() {
          $( '.goofyenemypickedcontainer' ).hide();
          $('#attackdialogueone').html("Goofy has been defeated! Choose another character to battle.");
          $('#attackdialoguetwo').hide();
-         allenemykilled = allenemykilled + 1;
+         goofyenemydeath = true;
         goofyenemyhasbeenclicked = false;
         console.log(allenemykilled);
      }
@@ -134,7 +143,7 @@ $( ".attackbutton" ).on( "click", function() {
          $( '.pickedrikucontainer' ).hide();
          $('#attackdialogueone').html("You have been defeated!");
          $('#attackdialoguetwo').hide();
-         herokilled = herokilled + 1;
+         rikuherodeath = true;
          //to insert show reset button functions here
      }
 
@@ -142,7 +151,7 @@ $( ".attackbutton" ).on( "click", function() {
          $( '.pickeddonaldcontainer' ).hide();
          $('#attackdialogueone').html("You have been defeated!");
          $('#attackdialoguetwo').hide();
-          herokilled = herokilled + 1;
+          donaldherodeath = true;
          //to insert show reset button functions here
      }
 
@@ -150,7 +159,7 @@ $( ".attackbutton" ).on( "click", function() {
          $( '.pickedsoracontainer' ).hide();
          $('#attackdialogueone').html("You have been defeated!");
          $('#attackdialoguetwo').hide();
-          herokilled = herokilled + 1;
+          soraherodeath = true;
          //to insert show reset button functions here
      }
 
@@ -158,7 +167,7 @@ $( ".attackbutton" ).on( "click", function() {
          $( '.pickedgoofycontainer' ).hide();
          $('#attackdialogueone').html("You have been defeated!");
          $('#attackdialoguetwo').hide();
-          herokilled = herokilled + 1;
+          goofyherodeath = true;
          //to insert show reset button functions here
      }
 
@@ -428,22 +437,75 @@ function soraenemy(){
 
 
 //enemy and hero killed function
+
+//donald
 function resetgame() {
-if (allenemykilled === 3) {
+if (soraenemydeath && rikuenemydeath && goofyenemydeath) {
   $( '.attackbutton' ).hide();
   $( '.resetbutton' ).show();
   $('#attackdialogueone').html("Congrats you have won! Press reset button to play again.");
   $('#attackdialoguetwo').hide();
 
     }
+//sora
+if (donaldenemydeath && rikuenemydeath && goofyenemydeath) {
+      $( '.attackbutton' ).hide();
+      $( '.resetbutton' ).show();
+      $('#attackdialogueone').html("Congrats you have won! Press reset button to play again.");
+      $('#attackdialoguetwo').hide();
 
-if (herokilled === 1) {
+        }
+//riku
+        if (soraenemydeath && donaldenemydeath && goofyenemydeath) {
+          $( '.attackbutton' ).hide();
+          $( '.resetbutton' ).show();
+          $('#attackdialogueone').html("Congrats you have won! Press reset button to play again.");
+          $('#attackdialoguetwo').hide();
+
+            }
+  //goofy
+            if (soraenemydeath && rikuenemydeath && donaldenemydeath) {
+              $( '.attackbutton' ).hide();
+              $( '.resetbutton' ).show();
+              $('#attackdialogueone').html("Congrats you have won! Press reset button to play again.");
+              $('#attackdialoguetwo').hide();
+
+                }
+
+if (soraherodeath) {
   $( '.attackbutton' ).hide();
   $( '.resetbutton' ).show();
   $('#attackdialogueone').html("You have lost. Press reset button to play again.");
   $('#attackdialoguetwo').hide();
 
     }
+
+    if (donaldherodeath) {
+      $( '.attackbutton' ).hide();
+      $( '.resetbutton' ).show();
+      $('#attackdialogueone').html("You have lost. Press reset button to play again.");
+      $('#attackdialoguetwo').hide();
+
+        }
+
+        if (goofyherodeath) {
+          $( '.attackbutton' ).hide();
+          $( '.resetbutton' ).show();
+          $('#attackdialogueone').html("You have lost. Press reset button to play again.");
+          $('#attackdialoguetwo').hide();
+
+            }
+
+            if (rikuherodeath) {
+              $( '.attackbutton' ).hide();
+              $( '.resetbutton' ).show();
+              $('#attackdialogueone').html("You have lost. Press reset button to play again.");
+              $('#attackdialoguetwo').hide();
+
+                }
+
+
+
 
 }
 
@@ -452,23 +514,8 @@ if (herokilled === 1) {
 
 $( ".resetbutton" ).on( "click", function() {
 
-$( '.pickbuttoncontainer' ).hide();
-$( '.playerchooseContainer' ).hide();
-$( '.versus' ).hide();
-$( '.pickedsoracontainer' ).hide();
-$( '.pickedrikucontainer' ).hide();
-$( '.pickeddonaldcontainer' ).hide();
-$( '.pickedgoofycontainer' ).hide();
-$( '.playerenemyContainer' ).hide();
-$( '.soraenemypickedcontainer' ).hide();
-$( '.rikuenemypickedcontainer' ).hide();
-$( '.donaldenemypickedcontainer' ).hide();
-$( '.goofyenemypickedcontainer' ).hide();
-$( '.attackbutton' ).hide();
-$( '.dialoguebox' ).hide();
-$( '.resetbutton' ).hide();
-$( '.startgamesection' ).show();
-$( '.playersstartContainer' ).show();
+ window.location.reload(true);
+
 
   })
 
