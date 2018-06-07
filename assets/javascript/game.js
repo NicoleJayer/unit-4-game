@@ -17,11 +17,6 @@ $( '.resetbutton' ).hide();
 
 // create variables for each of the characters available -- maybe set them equal to health?
 
-var sorahealth = 200;
-var rikuhealth = 220;
-var goofyhealth = 180;
-var donaldhealth = 160;
-
 //hero hit -- make that the number that gets multiplied by 6 each time
 
 var heroattackvalue = 6;
@@ -44,6 +39,18 @@ var rikuherodeath = false;
 var donaldherodeath = false;
 var goofyherodeath = false;
 
+var goofyenemyhasbeenclicked = false;
+var soraenemyhasbeenclicked = false;
+var donaldenemyhasbeenclicked = false;
+var rikuenemyhasbeenclicked = false;
+
+var soraherohasbeenclicked = false;
+var rikuherohasbeenclicked = false;
+var donaldherohasbeenclicked = false;
+var goofyherohasbeenclicked = false;
+
+var attackbuttonclicked= false;
+
 
 
 //enemies hit -- make that the number that subtracts from the hero health by same number each time
@@ -56,17 +63,7 @@ var donaldenemyhit = 15;
 
 var goofyenemyhit = 18;
 
-var goofyenemyhasbeenclicked = false;
-var soraenemyhasbeenclicked = false;
-var donaldenemyhasbeenclicked = false;
-var rikuenemyhasbeenclicked = false;
 
-var soraherohasbeenclicked = false;
-var rikuherohasbeenclicked = false;
-var donaldherohasbeenclicked = false;
-var goofyherohasbeenclicked = false;
-
-var attackbuttonclicked= false;
 
 
 
@@ -102,12 +99,13 @@ $( ".attackbutton" ).on( "click", function() {
      $('.currentenemyhp').html(currentenemyhp);
      console.log(currentenemyhp);
      console.log(currentherohp);
+
      if (soraenemyhasbeenclicked && currentenemyhp<=0) {
          $( '.soraenemypickedcontainer' ).hide();
          $('#attackdialogueone').html("Sora has been defeated! Choose another character to battle.");
          $('#attackdialoguetwo').hide();
          soraenemydeath = true;
-         rikuenemyhasbeenclicked = false;
+         soraenemyhasbeenclicked = false;
          console.log(allenemykilled);
 
      }
@@ -172,7 +170,6 @@ $( ".attackbutton" ).on( "click", function() {
      }
 
      resetgame();
-
 })
 
 
